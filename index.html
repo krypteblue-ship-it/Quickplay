@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b12" />
+  <title>QUICKPLAY — Tiny games. Big breaks.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Quickplay home"><span class="brand-mark">Q</span> QUICK<span>PLAY</span></a>
+    <div class="top-right">
+      <span class="online-dot"></span><span class="tiny-label">ARCADE IS OPEN</span>
+      <div class="best-score">BEST <b id="bestScore">0</b></div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE 5-MINUTE ESCAPE</p>
+        <h1>Got a minute?<br><em>Make it count.</em></h1>
+        <p class="hero-text">Four tiny challenges. Zero downloads. No long tutorials.<br>Pick a game, beat your best, get back to life.</p>
+        <button class="random-btn" id="randomBtn"><span>✳</span> SURPRISE ME <b>↗</b></button>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="orb-core"><span>PLAY</span><b>!</b></div>
+        <div class="float-chip chip-a">01 / REACT</div>
+        <div class="float-chip chip-b">02 / REMEMBER</div>
+        <div class="float-chip chip-c">03 / THINK</div>
+        <div class="float-chip chip-d">04 / SURVIVE</div>
+        <div class="spark s1">✦</div><div class="spark s2">✳</div><div class="spark s3">+</div>
+      </div>
+    </section>
+
+    <section class="section-head">
+      <div><p class="eyebrow">SELECT YOUR DISTRACTION</p><h2>The mini arcade<span>.</span></h2></div>
+      <div class="session-note"><span class="live-pulse"></span> ALL GAMES UNDER 5 MIN</div>
+    </section>
+
+    <section class="game-grid">
+      <article class="game-card card-coral" data-game="reaction">
+        <div class="card-top"><span class="game-number">01</span><span class="game-tag">REFLEX</span></div>
+        <div class="game-visual reaction-visual"><div class="target-ring"><span>CLICK</span></div><i class="mini-star">✦</i></div>
+        <div class="card-bottom"><div><h3>Don't Blink</h3><p>Wait for green. Trust your reflexes.</p></div><button class="play-btn" data-open="reaction" aria-label="Play Don't Blink">↗</button></div>
+        <div class="card-meta"><span>⌁ 60 SEC</span><span>PERSONAL BEST <b id="best-reaction">—</b></span></div>
+      </article>
+
+      <article class="game-card card-violet" data-game="memory">
+        <div class="card-top"><span class="game-number">02</span><span class="game-tag">MEMORY</span></div>
+        <div class="game-visual memory-visual"><div class="memory-pads"><i></i><i></i><i></i><i></i></div></div>
+        <div class="card-bottom"><div><h3>Memory Overload</h3><p>Repeat the sequence. Don't slip.</p></div><button class="play-btn" data-open="memory" aria-label="Play Memory Overload">↗</button></div>
+        <div class="card-meta"><span>⌁ 2–3 MIN</span><span>PERSONAL BEST <b id="best-memory">—</b></span></div>
+      </article>
+
+      <article class="game-card card-lime" data-game="number">
+        <div class="card-top"><span class="game-number">03</span><span class="game-tag">LOGIC</span></div>
+        <div class="game-visual number-visual"><div class="number-tile">?</div><div class="number-equation">2 + 5 = <b>?</b></div><span class="number-spark">✳</span></div>
+        <div class="card-bottom"><div><h3>Brain Glitch</h3><p>Crack quick number puzzles.</p></div><button class="play-btn" data-open="number" aria-label="Play Brain Glitch">↗</button></div>
+        <div class="card-meta"><span>⌁ 2 MIN</span><span>PERSONAL BEST <b id="best-number">—</b></span></div>
+      </article>
+
+      <article class="game-card card-blue" data-game="dodge">
+        <div class="card-top"><span class="game-number">04</span><span class="game-tag">SURVIVAL</span></div>
+        <div class="game-visual dodge-visual"><div class="dodge-scene"><span class="player-shape"></span><i class="obstacle ob1"></i><i class="obstacle ob2"></i><i class="obstacle ob3"></i></div></div>
+        <div class="card-bottom"><div><h3>Last Survivor</h3><p>Dodge the chaos. Stay alive.</p></div><button class="play-btn" data-open="dodge" aria-label="Play Last Survivor">↗</button></div>
+        <div class="card-meta"><span>⌁ 60 SEC</span><span>PERSONAL BEST <b id="best-dodge">—</b></span></div>
+      </article>
+    </section>
+
+    <footer><span>QUICKPLAY © 2026</span><span>MADE FOR THE “I'M BORED” MOMENT.</span><span>NO DOWNLOADS. JUST PLAY.</span></footer>
+  </main>
+
+  <div class="modal" id="gameModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="game-window" role="dialog" aria-modal="true" aria-labelledby="gameTitle">
+      <div class="window-top"><span class="window-label"><i></i> QUICKPLAY / ARCADE</span><button class="close-btn" data-close aria-label="Close game">✕</button></div>
+      <div class="game-content">
+        <div class="game-heading"><div><p class="eyebrow" id="gameCategory">REFLEX TEST</p><h2 id="gameTitle">Don't Blink</h2></div><div class="game-timer" id="gameTimer">60<span>SEC</span></div></div>
+        <div id="gameArea" class="game-area"></div>
+        <div class="game-instructions" id="gameInstructions">Wait for the signal, then react as fast as you can.</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
