@@ -1,94 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#090b12" />
-  <title>QUICKPLAY — Tiny games. Big breaks.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QUICKPLAY — Dream Arcade</title>
+  <meta name="description" content="Jump into QUICKPLAY, a collection of fun mini-games you can finish in minutes.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="noise"></div>
+
+  <!-- TOP NAVIGATION -->
   <header class="topbar">
-    <a class="brand" href="#" aria-label="Quickplay home"><span class="brand-mark">Q</span> QUICK<span>PLAY</span></a>
+    <a href="#" class="logo">QUICK<span>PLAY</span></a>
+
     <div class="top-right">
-      <span class="online-dot"></span><span class="tiny-label">ARCADE IS OPEN</span>
-      <div class="best-score">BEST <b id="bestScore">0</b></div>
+      <div class="best-score">
+        <span>YOUR BEST</span>
+        <strong id="bestScore">0</strong>
+      </div>
     </div>
   </header>
 
+
+  <!-- MAIN CONTENT -->
   <main class="shell">
+
+    <!-- HERO SECTION -->
     <section class="hero">
+
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> THE 5-MINUTE ESCAPE</p>
-        <h1>Got a minute?<br><em>Make it count.</em></h1>
-        <p class="hero-text">Four tiny challenges. Zero downloads. No long tutorials.<br>Pick a game, beat your best, get back to life.</p>
-        <button class="random-btn" id="randomBtn"><span>✳</span> SURPRISE ME <b>↗</b></button>
+        <p class="eyebrow">WELCOME TO YOUR DREAM ARCADE</p>
+
+        <h1>
+          Small games.<br>
+          <span>Big fun.</span>
+        </h1>
+
+        <p class="hero-description">
+          Take a break, challenge your brain, and see how good you really are.
+          Pick a game and let the fun begin.
+        </p>
+
+        <button class="primary-btn" id="randomBtn">
+          Surprise Me ✦
+        </button>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="orb-core"><span>PLAY</span><b>!</b></div>
-        <div class="float-chip chip-a">01 / REACT</div>
-        <div class="float-chip chip-b">02 / REMEMBER</div>
-        <div class="float-chip chip-c">03 / THINK</div>
-        <div class="float-chip chip-d">04 / SURVIVE</div>
-        <div class="spark s1">✦</div><div class="spark s2">✳</div><div class="spark s3">+</div>
+
+
+      <div class="hero-art">
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="hero-sphere">✦</div>
+
+        <div class="floating-chip chip-one">PLAY</div>
+        <div class="floating-chip chip-two">HAVE FUN</div>
+        <div class="floating-chip chip-three">REPEAT</div>
+
+        <div class="spark spark-one">✧</div>
+        <div class="spark spark-two">✦</div>
+        <div class="spark spark-three">✧</div>
+
       </div>
+
     </section>
 
-    <section class="section-head">
-      <div><p class="eyebrow">SELECT YOUR DISTRACTION</p><h2>The mini arcade<span>.</span></h2></div>
-      <div class="session-note"><span class="live-pulse"></span> ALL GAMES UNDER 5 MIN</div>
+
+    <!-- GAME SECTION -->
+    <section class="games-section">
+
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CHOOSE YOUR CHALLENGE</p>
+          <h2>Today's games</h2>
+        </div>
+
+        <span class="game-count">04 GAMES</span>
+      </div>
+
+
+      <div class="game-grid">
+
+        <!-- GAME 1 -->
+        <article class="game-card" data-game="reaction">
+
+          <div class="card-top">
+            <span class="game-number">01</span>
+            <span class="game-tag">REFLEX</span>
+          </div>
+
+          <div class="game-icon">⚡</div>
+
+          <h3>Don't Blink</h3>
+
+          <p>
+            Test your reflexes. Wait for the signal and click as fast as you can!
+          </p>
+
+          <div class="card-bottom">
+            <span>BEST: <strong id="best-reaction">--</strong></span>
+
+            <button class="play-btn" data-open="reaction">
+              PLAY ↗
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- GAME 2 -->
+        <article class="game-card" data-game="memory">
+
+          <div class="card-top">
+            <span class="game-number">02</span>
+            <span class="game-tag">MEMORY</span>
+          </div>
+
+          <div class="game-icon">🧠</div>
+
+          <h3>Memory Overload</h3>
+
+          <p>
+            Watch the pattern, remember the sequence, and repeat it correctly.
+          </p>
+
+          <div class="card-bottom">
+            <span>BEST: <strong id="best-memory">--</strong></span>
+
+            <button class="play-btn" data-open="memory">
+              PLAY ↗
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- GAME 3 -->
+        <article class="game-card" data-game="number">
+
+          <div class="card-top">
+            <span class="game-number">03</span>
+            <span class="game-tag">BRAIN</span>
+          </div>
+
+          <div class="game-icon">🔢</div>
+
+          <h3>Brain Glitch</h3>
+
+          <p>
+            Solve quick maths questions before the timer runs out.
+          </p>
+
+          <div class="card-bottom">
+            <span>BEST: <strong id="best-number">--</strong></span>
+
+            <button class="play-btn" data-open="number">
+              PLAY ↗
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- GAME 4 -->
+        <article class="game-card" data-game="dodge">
+
+          <div class="card-top">
+            <span class="game-number">04</span>
+            <span class="game-tag">SURVIVAL</span>
+          </div>
+
+          <div class="game-icon">☄️</div>
+
+          <h3>Last Survivor</h3>
+
+          <p>
+            Dodge incoming obstacles and survive for as long as possible.
+          </p>
+
+          <div class="card-bottom">
+            <span>BEST: <strong id="best-dodge">--</strong></span>
+
+            <button class="play-btn" data-open="dodge">
+              PLAY ↗
+            </button>
+          </div>
+
+        </article>
+
+      </div>
+
     </section>
 
-    <section class="game-grid">
-      <article class="game-card card-coral" data-game="reaction">
-        <div class="card-top"><span class="game-number">01</span><span class="game-tag">REFLEX</span></div>
-        <div class="game-visual reaction-visual"><div class="target-ring"><span>CLICK</span></div><i class="mini-star">✦</i></div>
-        <div class="card-bottom"><div><h3>Don't Blink</h3><p>Wait for green. Trust your reflexes.</p></div><button class="play-btn" data-open="reaction" aria-label="Play Don't Blink">↗</button></div>
-        <div class="card-meta"><span>⌁ 60 SEC</span><span>PERSONAL BEST <b id="best-reaction">—</b></span></div>
-      </article>
 
-      <article class="game-card card-violet" data-game="memory">
-        <div class="card-top"><span class="game-number">02</span><span class="game-tag">MEMORY</span></div>
-        <div class="game-visual memory-visual"><div class="memory-pads"><i></i><i></i><i></i><i></i></div></div>
-        <div class="card-bottom"><div><h3>Memory Overload</h3><p>Repeat the sequence. Don't slip.</p></div><button class="play-btn" data-open="memory" aria-label="Play Memory Overload">↗</button></div>
-        <div class="card-meta"><span>⌁ 2–3 MIN</span><span>PERSONAL BEST <b id="best-memory">—</b></span></div>
-      </article>
+    <!-- LEADERBOARD WILL BE ADDED BY JAVASCRIPT -->
 
-      <article class="game-card card-lime" data-game="number">
-        <div class="card-top"><span class="game-number">03</span><span class="game-tag">LOGIC</span></div>
-        <div class="game-visual number-visual"><div class="number-tile">?</div><div class="number-equation">2 + 5 = <b>?</b></div><span class="number-spark">✳</span></div>
-        <div class="card-bottom"><div><h3>Brain Glitch</h3><p>Crack quick number puzzles.</p></div><button class="play-btn" data-open="number" aria-label="Play Brain Glitch">↗</button></div>
-        <div class="card-meta"><span>⌁ 2 MIN</span><span>PERSONAL BEST <b id="best-number">—</b></span></div>
-      </article>
-
-      <article class="game-card card-blue" data-game="dodge">
-        <div class="card-top"><span class="game-number">04</span><span class="game-tag">SURVIVAL</span></div>
-        <div class="game-visual dodge-visual"><div class="dodge-scene"><span class="player-shape"></span><i class="obstacle ob1"></i><i class="obstacle ob2"></i><i class="obstacle ob3"></i></div></div>
-        <div class="card-bottom"><div><h3>Last Survivor</h3><p>Dodge the chaos. Stay alive.</p></div><button class="play-btn" data-open="dodge" aria-label="Play Last Survivor">↗</button></div>
-        <div class="card-meta"><span>⌁ 60 SEC</span><span>PERSONAL BEST <b id="best-dodge">—</b></span></div>
-      </article>
-    </section>
-
-    <footer><span>QUICKPLAY © 2026</span><span>MADE FOR THE “I'M BORED” MOMENT.</span><span>NO DOWNLOADS. JUST PLAY.</span></footer>
   </main>
 
-  <div class="modal" id="gameModal" aria-hidden="true">
+
+  <!-- GAME MODAL -->
+  <div class="modal" id="gameModal">
+
     <div class="modal-backdrop" data-close></div>
-    <section class="game-window" role="dialog" aria-modal="true" aria-labelledby="gameTitle">
-      <div class="window-top"><span class="window-label"><i></i> QUICKPLAY / ARCADE</span><button class="close-btn" data-close aria-label="Close game">✕</button></div>
-      <div class="game-content">
-        <div class="game-heading"><div><p class="eyebrow" id="gameCategory">REFLEX TEST</p><h2 id="gameTitle">Don't Blink</h2></div><div class="game-timer" id="gameTimer">60<span>SEC</span></div></div>
-        <div id="gameArea" class="game-area"></div>
-        <div class="game-instructions" id="gameInstructions">Wait for the signal, then react as fast as you can.</div>
+
+    <div class="game-window">
+
+      <div class="game-window-header">
+
+        <div>
+          <p id="gameCategory">MINI GAME</p>
+          <h2 id="gameTitle">Game Title</h2>
+        </div>
+
+        <button class="close-btn" data-close aria-label="Close game">
+          ✕
+        </button>
+
       </div>
-    </section>
+
+
+      <div class="game-status">
+
+        <div class="timer-box">
+          <span>TIME</span>
+          <strong id="gameTimer">00:00</strong>
+        </div>
+
+      </div>
+
+
+      <div class="game-content">
+
+        <div id="gameArea"></div>
+
+        <p id="gameInstructions">
+          Get ready to play!
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
 
+
+  <!-- SCRIPTS: KEEP THIS ORDER -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
